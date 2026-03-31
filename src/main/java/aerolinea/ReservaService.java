@@ -71,4 +71,22 @@ public class ReservaService {
             return false;
         }
     }
+
+    public static boolean registrarReserva(String codigo, String nombre, String pasaporte,
+                                           int cantidadAsientos, LocalDate fechaVuelo) {
+
+        boolean codigoValido = validarCodigoReserva(codigo);
+        boolean nombreValido = validarNombre(nombre);
+        boolean pasaporteValido = validarPasaporte(pasaporte);
+        boolean asientosValidos = validarCantidadAsientos(cantidadAsientos);
+        boolean fechaValida = validarFechaVuelo(fechaVuelo);
+
+        if (codigoValido && nombreValido && pasaporteValido && asientosValidos && fechaValida) {
+            System.out.println("La reserva ha sido registrada correctamente");
+            return true;
+        } else {
+            System.out.println("Debe ingresar todos los datos requeridos");
+            return false;
+        }
+    }
 }
