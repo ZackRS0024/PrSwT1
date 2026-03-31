@@ -26,4 +26,9 @@ public class ReservaServiceTest {
 
     }
 
+    @Test
+    public void testValidarCantidadAsientos() {
+        assertTrue(ReservaService.validarCantidadAsientos(1));
+        assertFalse(ReservaService.validarCantidadAsientos(0));
+    }
 }

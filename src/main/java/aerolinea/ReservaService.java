@@ -48,5 +48,14 @@ public class ReservaService {
         }
     }
 
+    public static boolean validarCantidadAsientos(int cantidad) {
 
+        if (cantidad > 0) {
+            System.out.println("cantidad de asientos válida");
+            return true;
+        } else {
+            System.out.println("La cantidad de asientos debe ser mayor a cero");
+            return false;
+        }
+    }
 }
