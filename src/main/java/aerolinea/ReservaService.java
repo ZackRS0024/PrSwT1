@@ -58,4 +58,17 @@ public class ReservaService {
             return false;
         }
     }
+
+    public static boolean validarFechaVuelo(LocalDate fechaVuelo) {
+
+        LocalDate hoy = LocalDate.now();
+
+        if (fechaVuelo.isAfter(hoy)) {
+            System.out.println("fecha válida");
+            return true;
+        } else {
+            System.out.println("La fecha del vuelo debe ser posterior a la fecha actual");
+            return false;
+        }
+    }
 }

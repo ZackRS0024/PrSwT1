@@ -31,4 +31,10 @@ public class ReservaServiceTest {
         assertTrue(ReservaService.validarCantidadAsientos(1));
         assertFalse(ReservaService.validarCantidadAsientos(0));
     }
+
+    @Test
+    public void testValidarFechaVuelo() {
+        assertTrue(ReservaService.validarFechaVuelo(LocalDate.now().plusDays(1)));
+        assertFalse(ReservaService.validarFechaVuelo(LocalDate.now()));           // hoy
+    }
 }
