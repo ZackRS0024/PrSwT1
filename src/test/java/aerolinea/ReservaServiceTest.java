@@ -19,4 +19,11 @@ public class ReservaServiceTest {
         assertFalse(ReservaService.validarNombre("Ana"));
     }
 
+    @Test
+    public void testValidarPasaporte() {
+        assertTrue(ReservaService.validarPasaporte("A1234567"));
+        assertFalse(ReservaService.validarPasaporte("1234567"));
+
+    }
+
 }

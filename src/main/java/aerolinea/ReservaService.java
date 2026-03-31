@@ -21,7 +21,7 @@ public class ReservaService {
     }
 
     public static boolean validarNombre(String nombre) {
-        String patron = "^[a-zA-Z]{5,}$"; // solo letras, mínimo 5
+        String patron = "^[a-zA-Z]{5,}$";
         Pattern pattern = Pattern.compile(patron);
         Matcher matcher = pattern.matcher(nombre.trim());
 
@@ -33,5 +33,20 @@ public class ReservaService {
             return false;
         }
     }
+
+    public static boolean validarPasaporte(String pasaporte) {
+        String patron = "^[a-zA-Z0-9]{8,10}$";
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(pasaporte);
+
+        if (matcher.matches()) {
+            System.out.println("pasaporte válido");
+            return true;
+        } else {
+            System.out.println("Ingrese un número de pasaporte válido");
+            return false;
+        }
+    }
+
 
 }
