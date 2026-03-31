@@ -13,4 +13,10 @@ public class ReservaServiceTest {
         assertFalse(ReservaService.validarCodigoReserva("abc123"), "codigo invalido");
     }
 
+    @Test
+    public void testValidarNombre() {
+        assertTrue(ReservaService.validarNombre("Carlos"));
+        assertFalse(ReservaService.validarNombre("Ana"));
+    }
+
 }

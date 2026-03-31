@@ -20,4 +20,18 @@ public class ReservaService {
         }
     }
 
+    public static boolean validarNombre(String nombre) {
+        String patron = "^[a-zA-Z]{5,}$"; // solo letras, mínimo 5
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(nombre.trim());
+
+        if (matcher.matches()) {
+            System.out.println("nombre válido");
+            return true;
+        } else {
+            System.out.println("El nombre del pasajero debe tener al menos cinco caracteres alfabéticos");
+            return false;
+        }
+    }
+
 }
